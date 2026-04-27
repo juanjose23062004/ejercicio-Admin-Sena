@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class computers extends Model
+class Computers extends Model
 {
     use HasFactory;
-    public function apprentices(){
-        return $this->belongsToMany(apprentices::class);
+    public function apprentice(){
+        return $this->belongsTo(Apprentices::class);
     }
 }

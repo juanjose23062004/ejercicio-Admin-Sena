@@ -16,14 +16,14 @@ return new class extends Migration
             $table->string('course number');
             $table->string('day');
 
-            $table->unsignedBigInteger('area_id')->unique();
+            $table->unsignedBigInteger('area_id');
             //crear la referencia 
             $table->foreign('area_id')
                 ->references('id')
                 ->on('areas')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->unsignedBigInteger('traing_center_id')->unique();
+            $table->unsignedBigInteger('traing_center_id');
             //crear la referencia 
             $table->foreign('traing_center_id')
                 ->references('id')

@@ -5,14 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class apprentices extends Model
+class Apprentices extends Model
 {
     use HasFactory;
         use HasFactory;
-    public function computers(){
-        return $this->belongsToMany(computers::class);
+        // uno a muchos
+    public function computer(){
+        return $this->belongsTo(Computers::class);
     }
-    public function course_techer(){
-         return $this->hasMany(course_teacher::class);
+
+    public function course(){
+        return $this->belongsTo(Courses::class);
     }
 }

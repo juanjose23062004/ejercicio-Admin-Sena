@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->string('cell number');
+            $table->string('cell_number');
 
-            $table->unsignedBigInteger('course_id')->unique();
+            $table->unsignedBigInteger('course_id');
             //crear la referencia 
             $table->foreign('course_id')
                 ->references('id')
@@ -25,7 +25,7 @@ return new class extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->unsignedBigInteger('computer_id')->unique();
+            $table->unsignedBigInteger('computer_id');
             //crear la referencia 
             $table->foreign('computer_id')
                 ->references('id')

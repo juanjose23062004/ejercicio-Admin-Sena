@@ -5,21 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class teachers extends Model
+class Teachers extends Model
 {
     use HasFactory;
     
 
-    public function area(){
-        return $this->belongsTo(areas::class);
+    public function areas(){
+        return $this->belongsToMany(areas::class);
         // return $this->belongsTo('App\Models\areas);
         }
     public function training_centers(){
             
-        return $this->belongsTo(training_centers::class);
+        return $this->belongsToMany(Training_Centers::class);
     }
-    public function cources(){
-        return $this->belongsToMany(courses::class);
+    public function cource(){
+        return $this->hasMany(Courses::class);
     }
     
 

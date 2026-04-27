@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class courses extends Model
+class Courses extends Model
 {
     use HasFactory;
     public function training_center(){
-        return $this->hasMany(training_centers::class);
+        return $this->belongsTo(Training_Centers::class);
     }
-    public function area(){
-        return $this->hasMany(areas::class);
+    public function areas(){
+        return $this->belongsToMany(Areas::class);
     }
     public function apprentices(){
-        return $this->belongsToMany(apprentices::class);
+        return $this->hasMany(Apprentices::class);
     }
     public function teachers(){
-        return $this->belongsToMany(teachers::class);
+        return $this->belongsToMany(Teachers::class);
     }
 }
