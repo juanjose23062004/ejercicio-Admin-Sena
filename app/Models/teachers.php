@@ -18,4 +18,9 @@ class teachers extends Model
             
         return $this->belongsTo(training_centers::class);
     }
+    public function cources(){
+        return $this->belongsToMany(courses::class);
+    }
+    
+
 }

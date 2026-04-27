@@ -9,6 +9,9 @@ class areas extends Model
 {
     use HasFactory;
     public function teaches(){
-        return $this->hasMany(teachers::class);
+        return $this->belongsToMany(teachers::class);
+    }
+    public function courses_teachers(){
+        return $this->belongsToMany(course_teacher::class);
     }
 }
