@@ -15,7 +15,7 @@ class Courses extends Model
         return $this->belongsToMany(Areas::class);
     }
     public function apprentices(){
-        return $this->hasMany(Apprentices::class);
+        return $this->hasMany(Apprentices::class );
     }
     public function teachers(){
         return $this->belongsToMany(Teachers::class);

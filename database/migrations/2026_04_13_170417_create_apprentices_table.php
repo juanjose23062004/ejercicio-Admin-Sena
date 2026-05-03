@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Validation\Rules\Unique;
 
 return new class extends Migration
 {
@@ -25,7 +26,7 @@ return new class extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->unsignedBigInteger('computer_id');
+            $table->unsignedBigInteger('computer_id') ->Unique();
             //crear la referencia 
             $table->foreign('computer_id')
                 ->references('id')

@@ -9,6 +9,6 @@ class Computers extends Model
 {
     use HasFactory;
     public function apprentice(){
-        return $this->belongsTo(Apprentices::class);
+        return $this->hasMany(Apprentices::class,'id');
     }
 }
