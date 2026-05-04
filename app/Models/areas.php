@@ -15,6 +15,6 @@ class Areas extends Model
         return $this->hasMany(Teachers::class);
     }
     public function course(){
-        return $this->hasMany(Courses::class);
+        return $this->belongsToMany(Courses::class);
     }
 }

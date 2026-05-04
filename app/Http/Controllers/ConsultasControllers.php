@@ -15,9 +15,9 @@ class ConsultasControllers extends Controller
     //
     function consultas(){
 
-        $computer = new Computers();
-        $computer= Computers::find(1);
-        return $computer->apprentice;
+        // $computer = new Computers();
+        // $computer= Computers::find(1);
+        // return $computer->apprentice;
 
         // $aprendis = new Apprentices();
         // $apprendis = Apprentices::find(2);
@@ -26,7 +26,14 @@ class ConsultasControllers extends Controller
         // $aprendis = new Apprentices();
         // $apprendis = Apprentices::find(2);
         // return $apprendis->courses;
-        // $apprendis = new 
+        
+        $curso = new Courses();
+        $curso = Courses::find(1);
+        // return $curso->areas;
+        // return $curso->training_center;
+        return $curso->apprentice;
+
+
     }
 
 }

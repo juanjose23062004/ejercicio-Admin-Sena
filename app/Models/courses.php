@@ -9,13 +9,13 @@ class Courses extends Model
 {
     use HasFactory;
     public function training_center(){
-        return $this->belongsTo(Training_Centers::class);
+        return $this->belongsTo(TrainingCenters::class,'traing_center_id');
     }
     public function areas(){
-        return $this->belongsToMany(Areas::class);
+        return $this->belongsTo(Areas::class,'area_id');
     }
-    public function apprentices(){
-        return $this->hasMany(Apprentices::class );
+    public function apprentice(){
+        return $this->hasMany(Apprentices::class,'id');
     }
     public function teachers(){
         return $this->belongsToMany(Teachers::class);

@@ -14,6 +14,6 @@ class Apprentices extends Model
     }
 
     public function courses(){
-        return $this->belongsTo(Courses::class,'computer_id');
+        return $this->belongsToMany(Courses::class,'course_id');
     }
 }
